@@ -1,0 +1,8 @@
+.modal-overlay__button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.modal-overlay__button:focus {
+    outline: none;
+}

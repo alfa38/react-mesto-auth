@@ -1,0 +1,58 @@
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts/fonts.css");
+
+@import url("./block/root/root.css");
+
+@import url("./block/page/page.css");
+
+@import url("./block/header/header.css");
+@import url("./block/header/__logo/header__logo.css");
+
+@import url("./block/profile/profile.css");
+@import url("./block/profile/__avatar/profile__avatar.css");
+@import url("./block/profile/__avatar-container/profile__avatar-container.css");
+@import url("./block/profile/__avatar-overlay/profile__avatar-overlay.css");
+@import url("./block/profile/__data-container/profile__data-container.css");
+@import url("./block/profile/__name-container/profile__name-container.css");
+@import url("./block/profile/__name/profile__name.css");
+@import url("./block/profile/__profession/profile__profession.css");
+@import url("./block/profile/__button/profile__button.css");
+@import url("./block/profile/__button/_type/profile__button_type_add-card.css");
+@import url("./block/profile/__button/_type/profile__button_type_edit-profile.css");
+
+@import url("./block/cards-container/cards-container.css");
+
+@import url("./block/card-item/card-item.css");
+@import url("./block/card-item/__text-container/card-item__text-container.css");
+@import url("./block/card-item/__like-container/card-item__like-container.css");
+@import url("./block/edit-form/__inputs-container/edit-form__inputs-container.css");
+@import url("./block/card-item/__image/card-item__image.css");
+@import url("./block/card-item/__name/card-item__name.css");
+@import url("./block/card-item/__button/card-item__button.css");
+@import url("./block/card-item/__like-count/card-item__like-count.css");
+@import url("./block/card-item/__button/_active/card-item__button_active.css");
+@import url("./block/card-item/__button/_type/card-item__button_type_remove-card.css");
+@import url("./block/card-item/__image-container/card-item__image-container.css");
+
+@import url("./block/footer/footer.css");
+@import url("./block/footer/__text-container/footer__text-container.css");
+
+@import url("./block/modal-overlay/modal-overlay.css");
+@import url("./block/modal-overlay/_open/modal-overlay_open.css");
+@import url("./block/modal-overlay/__content/modal-overlay__content.css");
+@import url("./block/modal-overlay/__button/modal-overlay__button.css");
+@import url("./block/modal-overlay/__button/_type/modal-overlay__button_type_close-modal.css");
+
+@import url("./block/edit-form/edit-form.css");
+@import url("./block/edit-form/__input/edit-form__input.css");
+@import url("./block/edit-form/__input/_error/edit-form__input_error.css");
+@import url("./block/edit-form/__header/edit-form__header.css");
+@import url("./block/edit-form/__button/edit-form__button.css");
+@import url("./block/edit-form/__button/_disabled/edit-form__button_disabled.css");
+@import url("./block/edit-form/__button/_type/edit-form__button_type_save-changes.css");
+@import url("./block/edit-form/__error/edit-form_error.css");
+@import url("./block/edit-form/__error/_visible/edit-form__error_visible.css");
+
+@import url("./block/photo-viewier/photo-viewier.css");
+@import url("./block/photo-viewier/__image/photo-veiwier__image.css");
+@import url("./block/photo-viewier/__caption/photo-viewier__caption.css");

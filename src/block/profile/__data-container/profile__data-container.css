@@ -1,0 +1,11 @@
+.profile__data-container {
+    margin: auto 0 auto 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .profile__data-container {
+        max-width: 320px;
+        margin: auto;
+    }
+}
+

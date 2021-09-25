@@ -1,0 +1,14 @@
+.card-item__union {
+    margin: auto 0 auto auto;
+    background-image: url('../../../images/union.svg');
+    background-size: 22px 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 22px;
+    height: 19px;
+}
+
+.card-item__union:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

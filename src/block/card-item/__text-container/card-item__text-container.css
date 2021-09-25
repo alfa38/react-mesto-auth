@@ -1,0 +1,6 @@
+.card-item__text-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 246px;
+    width: 100%;
+}
