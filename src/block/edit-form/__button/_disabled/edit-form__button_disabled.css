@@ -1,0 +1,7 @@
+.edit-form__button_disabled {
+    border: 1px solid black;
+    background: white;
+    color: black;
+    opacity: 0.2;
+    pointer-events: none;
+}

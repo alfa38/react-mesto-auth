@@ -1,0 +1,5 @@
+.modal-overlay__content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}

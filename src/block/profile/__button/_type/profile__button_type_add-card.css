@@ -1,0 +1,21 @@
+.profile__button_type_add-card {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 22px;
+    margin: auto 0 auto auto;
+    background-image: url('../../../../images/AddButtonImg.svg');
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    background-position: center;
+    border-width: 2px;
+}
+
+@media screen and (max-width: 767px) {
+    .profile__button_type_add-card {
+        margin: 36px auto 0 auto;
+        width: 100%;
+        background-size: 16px 16px;
+    }
+}
+

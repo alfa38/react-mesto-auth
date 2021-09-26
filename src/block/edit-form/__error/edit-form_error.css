@@ -1,0 +1,20 @@
+.edit-form__error {
+    visibility: hidden;
+    margin: 0;
+    position: relative;
+    left: 35px;
+    top: -25px;
+    height: 0;
+    font-size: 12px;
+    line-height: 15px;
+    color: red;
+    transition: visibility 0.3s linear;
+    max-width: 358px;
+}
+
+@media screen and (max-width: 767px) {
+    .edit-form__error {
+        max-width: 238px;
+        left: 23px;
+    }
+}
