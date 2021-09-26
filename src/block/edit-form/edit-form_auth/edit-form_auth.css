@@ -1,0 +1,12 @@
+.edit-form_auth {
+  background-color: black;
+  min-width: 358px;
+  max-width: 358px;
+}
+
+@media screen and (max-width: 767px) {
+  .edit-form_auth {
+      max-width: 260px;
+      min-width: 260px;
+  }
+}

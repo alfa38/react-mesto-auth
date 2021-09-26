@@ -1,0 +1,14 @@
+.info-tooltip {
+  display: flex;
+  flex-direction: column;
+  min-width: 430px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+@media screen and (max-width: 767px) {
+  .info-tooltip {
+      max-width: 280px;
+      min-width: 280px;
+  }
+}

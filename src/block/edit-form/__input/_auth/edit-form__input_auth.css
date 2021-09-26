@@ -1,0 +1,9 @@
+.edit-form__input_auth {
+  background-color: black;
+  color: #CCCCCC;
+  border-bottom: 2px solid #CCCCCC;
+}
+
+.edit-form__input_auth:first-of-type {
+  margin-top: 50px;
+}

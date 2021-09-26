@@ -4,3 +4,9 @@
     max-width: 120px;
     display: flex;
 }
+
+@media screen and (max-width: 767px) {
+    .profile__avatar-container {
+        margin: 0 auto;
+    }
+}

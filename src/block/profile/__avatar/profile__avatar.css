@@ -7,10 +7,6 @@
     object-fit: cover;
 }
 
-.profile__avatar:hover {
-    
-}
-
 @media screen and (max-width: 767px) {
     .profile__avatar {
         max-width: 320px;
