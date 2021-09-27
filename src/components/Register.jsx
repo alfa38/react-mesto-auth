@@ -63,7 +63,7 @@ const Register = ({onSubmit}) => {
           Зарегистрироватся
         </button>
       </form>
-      <p className="auth-page__caption">Уже зарегистрированы? <Link to="/sign-in" className="auth-page__link" activeClassName="auth-page__link_active">Войти</Link></p>
+      <p className="auth-page__caption">Уже зарегистрированы? <Link to="/sign-in" className="auth-page__link">Войти</Link></p>
     </section>
   );
 }
