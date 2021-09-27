@@ -4,12 +4,12 @@ import PopupWithForm from './PopupWithForm';
 
 const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
 
-  const [name, setName] = useState('');
-  const [isNameValid, setNameValidity] = useState(false);
-  const [nameValidationMessage, setNameValidationMessage] = useState('');
-  const [link, setLink] = useState('');
-  const [isLinkValid, setLinkValidity] = useState(false);
-  const [linkValidationMessage, setLinkValidationMessage] = useState('');
+  const [name, SetName] = useState('');
+  const [isNameValid, SetNameValidity] = useState(false);
+  const [nameValidationMessage, SetNameValidationMessage] = useState('');
+  const [link, SetLink] = useState('');
+  const [isLinkValid, SetLinkValidity] = useState(false);
+  const [linkValidationMessage, SetLinkValidationMessage] = useState('');
 
   const handleInputs = (event) => {
     const isValid = event.target.validity.valid;
@@ -18,14 +18,14 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
     const value = event.target.value;
     switch (name) {
       case 'cardName':
-        setName(value);
-        setNameValidity(isValid);
-        setNameValidationMessage(validationMessage);
+        SetName(value);
+        SetNameValidity(isValid);
+        SetNameValidationMessage(validationMessage);
         break;
       case 'cardLink':
-        setLink(value);
-        setLinkValidity(isValid);
-        setLinkValidationMessage(validationMessage);
+        SetLink(value);
+        SetLinkValidity(isValid);
+        SetLinkValidationMessage(validationMessage);
         break;
       default:
         break;
@@ -38,12 +38,12 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
   }
 
   useEffect(() => {
-    setName('');
-    setLink('');
-    setNameValidity(false);
-    setLinkValidity(false);
-    setNameValidationMessage('');
-    setLinkValidationMessage('');
+    SetName('');
+    SetLink('');
+    SetNameValidity(false);
+    SetLinkValidity(false);
+    SetNameValidationMessage('');
+    SetLinkValidationMessage('');
   }, [isOpen]);
 
   return (

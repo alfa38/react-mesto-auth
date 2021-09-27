@@ -2,12 +2,12 @@ import React, {useState} from "react";
 import { useEffect } from "react/cjs/react.development";
 
 const ImagePopup = ({ card, onClose }) => {
-  const [link, setLink] = useState('');
+  const [link, SetLink] = useState('');
   useEffect(() => {
     if (!card) {
-      setTimeout(() => setLink(''), 300);
+      setTimeout(() => SetLink(''), 300);
     } else {
-      setLink(card.link);
+      SetLink(card.link);
     }
   }, [card]);
   return (

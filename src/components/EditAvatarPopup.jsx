@@ -1,20 +1,18 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import PopupWithForm from './PopupWithForm';
 
 const EditAvatarPopup = ({ onClose, isOpen, onUpdateAvatar }) => {
-  const inputRef = useRef();
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    onUpdateAvatar(inputRef.current.value);
+    onUpdateAvatar(e.target.value);
   }
 
-  const [isLinkValid, setLinkValid] = useState(false);
-  const [validationMessage, setValidationMessage] = useState(false);
+  const [isLinkValid, SetLinkValid] = useState(false);
+  const [validationMessage, SetValidationMessage] = useState(false);
 
-  const validate = () => {
-    setLinkValid(inputRef.current.validity.valid);
-    setValidationMessage(inputRef.current.validationMessage);
+  const validate = (e) => {
+    SetLinkValid(e.target.validity.valid);
+    SetValidationMessage(e.target.validationMessage);
   }
   return (
     <PopupWithForm
@@ -27,7 +25,7 @@ const EditAvatarPopup = ({ onClose, isOpen, onUpdateAvatar }) => {
         isSubmitDisabled={!isLinkValid}
       >
         <div className="edit-form__inputs-container">
-          <input ref={inputRef} onChange={validate} name="avatarLink" id="input-avatarLink" type="url" className="edit-form__input edit-form__input_edit_img-source" placeholder="Ссылка на новый аватар" required />
+          <input onChange={validate} name="avatarLink" id="input-avatarLink" type="url" className="edit-form__input edit-form__input_edit_img-source" placeholder="Ссылка на новый аватар" required />
           <span className={`edit-form__error input-cardname-error ${!isLinkValid ? 'edit-form__error_visible' : ''}`}>{validationMessage}</span>
         </div>
       </PopupWithForm>
