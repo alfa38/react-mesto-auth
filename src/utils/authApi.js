@@ -12,7 +12,7 @@ class AuthApiClass extends ApiBaseClass {
         password,
         email,
       }),
-    }).then(super._processResponse);
+    }).then(this._processResponse);
   }
   // 400 - некорректно заполнено одно из полей
   signIn(email, password) {
@@ -23,7 +23,7 @@ class AuthApiClass extends ApiBaseClass {
         password,
         email,
       }),
-    }).then(super._processResponse);
+    }).then(this._processResponse);
   }
   // 400 - не передано одно из полей
   // 401 - пользователь с email не найден
@@ -34,7 +34,7 @@ class AuthApiClass extends ApiBaseClass {
         ...this._headers,
         Authorization: `Bearer ${token}`,
       },
-    }).then(super._processResponse);
+    }).then(this._processResponse);
     // # Если токен не передан или передан без Bearer
     // 400 — Токен не передан или передан не в том формате
 

@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 
 const Login = ({ onSubmit }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, SetEmail] = useState('');
+  const [password, SetPassword] = useState('');
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    const isValid = event.target.validity.valid;
-    const validationMessage = event.target.validationMessage;
 
     switch (name) {
       case 'email':
-        setEmail(value);
+        SetEmail(value);
         break;
       case 'password':
-        setPassword(value);
+        SetPassword(value);
         break;
       default:
         break;
@@ -24,7 +22,6 @@ const Login = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('handler REg')
     onSubmit(email, password);
   }
 

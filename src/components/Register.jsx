@@ -2,29 +2,19 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const Register = ({onSubmit}) => {
-  const [email, setEmail] = useState('');
-  const [isEmailValid, setEmailValid] = useState(false);
-  const [emailValidationMessage, setEmailValidationMessage] = useState('');
-  const [password, setPassword] = useState('');
-  const [isPasswordValid, setPasswordValid] = useState('');
-  const [passwordValidationMessage, setPasswordValidationMessage] = useState('');
+  const [email, SetEmail] = useState('');
+  const [password, SetPassword] = useState('');
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    const isValid = event.target.validity.valid;
-    const validationMessage = event.target.validationMessage;
 
     switch (name) {
       case 'name':
-        setEmail(value);
-        setEmailValid(isValid);
-        setEmailValidationMessage(validationMessage);
+        SetEmail(value);
         break;
       case 'password':
-        setPassword(value);
-        setPasswordValid(isValid);
-        setPasswordValidationMessage(validationMessage);
+        SetPassword(value);
         break;
       default:
         break;

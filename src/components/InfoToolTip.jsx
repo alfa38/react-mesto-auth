@@ -3,15 +3,15 @@ import IconDeny from '../images/IconDeny.svg';
 import IconAccept from '../images/IconAccept.svg';
 
 const InfoToolTip = ({ isOpen, status, onClose }) => {
-  const [icon, setIcon] = useState(IconAccept);
-  const [message, setMessage] = useState('ОК');
+  const [icon, SetIcon] = useState(IconAccept);
+  const [message, SetMessage] = useState('ОК');
   useEffect(() => {
     if (status === 'OK') {
-      setIcon(IconAccept);
-      setMessage("Вы успешно зарегистрировались!");
+      SetIcon(IconAccept);
+      SetMessage("Вы успешно зарегистрировались!");
     } else {
-      setIcon(IconDeny);
-      setMessage("Что-то пошло не так! Попробуйте еще раз.");
+      SetIcon(IconDeny);
+      SetMessage("Что-то пошло не так! Попробуйте еще раз.");
     } 
   }, [status]);
   return (
