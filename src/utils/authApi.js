@@ -3,8 +3,6 @@ import { authApiOptions } from "./constants";
 
 class AuthApiClass extends ApiBaseClass {
   signUp(email, password) {
-    console.log('baseUrl', this._baseUrl);
-    console.log('header', this._headers);
     return fetch(`${this._baseUrl}/signup`, {
       method: "POST",
       headers: this._headers,

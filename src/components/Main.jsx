@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createRef } from "react";
+import React from "react";
 
 import Card from "./Card";
 import { СurrentUserContext } from '../contexts/CurrentUser';

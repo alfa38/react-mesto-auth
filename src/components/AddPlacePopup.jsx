@@ -3,13 +3,12 @@ import { useEffect } from 'react/cjs/react.development';
 import PopupWithForm from './PopupWithForm';
 
 const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
-
-  const [name, SetName] = useState('');
-  const [isNameValid, SetNameValidity] = useState(false);
-  const [nameValidationMessage, SetNameValidationMessage] = useState('');
-  const [link, SetLink] = useState('');
-  const [isLinkValid, SetLinkValidity] = useState(false);
-  const [linkValidationMessage, SetLinkValidationMessage] = useState('');
+  const [name, setName] = useState('');
+  const [isNameValid, setIsNameValid] = useState(false);
+  const [nameValidationMessage, setNameValidationMessage] = useState('');
+  const [link, setLink] = useState('');
+  const [isLinkValid, setIsLinkValid] = useState(false);
+  const [linkValidationMessage, setLinkValidationMessage] = useState('');
 
   const handleInputs = (event) => {
     const isValid = event.target.validity.valid;
@@ -18,14 +17,14 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
     const value = event.target.value;
     switch (name) {
       case 'cardName':
-        SetName(value);
-        SetNameValidity(isValid);
-        SetNameValidationMessage(validationMessage);
+        setName(value);
+        setIsNameValid(isValid);
+        setNameValidationMessage(validationMessage);
         break;
       case 'cardLink':
-        SetLink(value);
-        SetLinkValidity(isValid);
-        SetLinkValidationMessage(validationMessage);
+        setLink(value);
+        setIsLinkValid(isValid);
+        setLinkValidationMessage(validationMessage);
         break;
       default:
         break;
@@ -38,12 +37,12 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
   }
 
   useEffect(() => {
-    SetName('');
-    SetLink('');
-    SetNameValidity(false);
-    SetLinkValidity(false);
-    SetNameValidationMessage('');
-    SetLinkValidationMessage('');
+    setName('');
+    setLink('');
+    setIsNameValid(false);
+    setIsLinkValid(false);
+    setNameValidationMessage('');
+    setLinkValidationMessage('');
   }, [isOpen]);
 
   return (

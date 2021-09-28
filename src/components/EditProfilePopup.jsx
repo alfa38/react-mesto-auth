@@ -4,20 +4,20 @@ import PopupWithForm from './PopupWithForm';
 
 const EditProfilePopup = ({ onClose, isOpen, onUpdateUser }) => {
   const currentUser = useContext(СurrentUserContext);
-  const [name, SetName] = useState('');
-  const [isNameValid, SetNameValidity] = useState(false);
-  const [nameValidationMessage, SetNameValidationMessage] = useState('');
-  const [description, SetDescription] = useState('');
-  const [isDescriptionValid, SetDescriptionValidity] = useState(false);
-  const [descriptionValidationMessage, SetDescriptionValidationMessage] = useState('');
+  const [name, setName] = useState('');
+  const [isNameValid, setIsNameValid] = useState(false);
+  const [nameValidationMessage, setNameValidationMessage] = useState('');
+  const [description, setDescription] = useState('');
+  const [isDescriptionValid, setIsDescriptionValid] = useState(false);
+  const [descriptionValidationMessage, setDescriptionValidationMessage] = useState('');
 
   useEffect(() => {
-    SetName(currentUser.name);
-    SetNameValidity(false);
-    SetNameValidationMessage('');
-    SetDescription(currentUser.about);
-    SetDescriptionValidity(false);
-    SetDescriptionValidationMessage('');
+    setName(currentUser.name);
+    setIsNameValid(false);
+    setNameValidationMessage('');
+    setDescription(currentUser.about);
+    setIsDescriptionValid(false);
+    setDescriptionValidationMessage('');
   }, [currentUser, isOpen]);
 
   const handleInputChange = (e) => {
@@ -28,14 +28,14 @@ const EditProfilePopup = ({ onClose, isOpen, onUpdateUser }) => {
     const value = e.target.value;
     switch(name) {
       case 'name':
-        SetName(value);
-        SetNameValidity(isValid);
-        SetNameValidationMessage(validationMessage);
+        setName(value);
+        setIsNameValid(isValid);
+        setNameValidationMessage(validationMessage);
         break;
       case 'description':
-        SetDescription(value);
-        SetDescriptionValidity(isValid);
-        SetDescriptionValidationMessage(validationMessage);
+        setDescription(value);
+        setIsDescriptionValid(isValid);
+        setDescriptionValidationMessage(validationMessage);
         break;
       default:
         break;
