@@ -11,7 +11,6 @@ class ApiClass extends ApiBaseClass {
   }
 
   getInitialCards() {
-    console.log('getCards', this._baseUrl);
     return fetch(`${this._baseUrl}/cards`, {
       method: "GET",
       headers: this._headers,

@@ -18,8 +18,8 @@ import AuthApi from '../utils/authApi';
 
 function App() {
   const history = useHistory();
-  const [isLoggedIn, SetLoggedIn] = useState(false);
-  const [currentUser, SetCurrentUser] = useState(
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(
     {
       name: "Жак-Ив Кусто",
       about: "Исследователь океана",
@@ -27,34 +27,34 @@ function App() {
       avatar: "https://proza.ru/pics/2020/06/11/119.jpg",
       email: ''
     });
-  const [email, SetEmail] = useState("");
-  const [isEditProfilePopupOpen, SetEditProfileOpen] = useState(false);
-  const [isAddPlacePopupOpen, SetAddPlaceModalOpen] = useState(false);
-  const [isEditAvatarPopupOpen, SetEditAvatarOpen] = useState(false);
-  const [isInfoOpen, SetInfoOpen] = useState(false);
-  const [infoStatus, SetInfoStatus] = useState('OK');
-  const [selectedCard, SetSelectedCard] = useState(undefined);
-  const [cards, SetCards] = useState([]);
+  const [email, setEmail] = useState("");
+  const [isEditProfilePopupOpen, setEditProfilePopupOpen] = useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
+  const [isInfoOpen, setIsInfoOpen] = useState(false);
+  const [infoStatus, setInfoStatus] = useState('OK');
+  const [selectedCard, setSelectedCard] = useState(undefined);
+  const [cards, setCards] = useState([]);
 
   const handleEditAvatarClick = () => {
-    SetEditAvatarOpen(true);
+    setIsEditAvatarPopupOpen(true);
   }
 
   const handleEditProfileClick = () => {
-    SetEditProfileOpen(true);
+    setEditProfilePopupOpen(true);
   }
 
   const handleAddPlaceClick = () => {
-    SetAddPlaceModalOpen(true)
+    setIsAddPlacePopupOpen(true)
   }
 
   const handleCardClick = (card) => {
-    SetSelectedCard(card);
+    setSelectedCard(card);
   }
 
   const handleSubmitPlace = (name, link) => {
     Api.addNewCard(name, link).then((response) => {
-      SetCards([response, ...cards]);
+      setCards([response, ...cards]);
       closeAllPopups();
     }).catch((error) => {
       console.log(error);
@@ -63,7 +63,7 @@ function App() {
 
   const handleUpdateUser = (user) => {
     Api.updateProfile(user).then((response) => {
-      SetCurrentUser(response);
+      setCurrentUser(response);
       closeAllPopups();
     }).catch((error) => {
       console.log(error);
@@ -72,7 +72,7 @@ function App() {
 
   const handleUpdateAvatar = (newLink) => {
     Api.updateAvatar(newLink).then((response) => {
-      SetCurrentUser(response);
+      setCurrentUser(response);
       closeAllPopups();
     }).catch((error) => {
       console.log(error);
@@ -80,11 +80,11 @@ function App() {
   }
 
   const closeAllPopups = () => {
-    SetEditProfileOpen(false);
-    SetAddPlaceModalOpen(false);
-    SetEditAvatarOpen(false);
-    SetInfoOpen(false);
-    SetSelectedCard(undefined);
+    setEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+    setIsEditAvatarPopupOpen(false);
+    setIsInfoOpen(false);
+    setSelectedCard(undefined);
   }
 
   const handleCardLike = (cardId, isLiked) => {
@@ -93,7 +93,7 @@ function App() {
       const newCards = cards.map((cardItem) => {
         return cardItem._id === response._id ? response : cardItem;
       })
-      SetCards(newCards);
+      setCards(newCards);
     }).catch((error) => {
       console.log(error);
     });
@@ -101,7 +101,7 @@ function App() {
 
   const handleCardDelete = (cardId) => {
     Api.deleteCard(cardId).then(() => {
-      SetCards((state) => {
+      setCards((state) => {
         return state.filter((cardItem) => {
           return cardItem._id !== cardId;
         });
@@ -113,11 +113,11 @@ function App() {
 
   const validateToken = () => {
     AuthApi.validateToken(localStorage.getItem("token")).then((response) => {
-      SetLoggedIn(true);
-      SetEmail(response.data.email);
+      setLoggedIn(true);
+      setEmail(response.data.email);
       history.push('/');
     }).catch((error) => {
-      SetLoggedIn(false);
+      setLoggedIn(false);
       localStorage.removeItem('token');
     });
   }
@@ -127,25 +127,25 @@ function App() {
       localStorage.setItem('token', response.token);
       setTimeout(validateToken, 250);
     }).catch((error) => {
-      SetInfoOpen(true);
-      SetInfoStatus(error);
+      setIsInfoOpen(true);
+      setInfoStatus(error);
     });
   }
 
   const onRegister = (email, password) => {
     AuthApi.signUp(email, password).then(() => {
-      SetInfoStatus("OK");
+      setInfoStatus("OK");
       setTimeout(onLogin, 500, email, password);
     }).catch((error) => {
-      console.log('err', error);
-      SetInfoStatus(error);
+      console.log(error);
+      setInfoStatus(error);
     }).finally(() => {
-      SetInfoOpen(true);
+      setIsInfoOpen(true);
     });
   }
 
   const onSignOut = () => {
-    SetEmail('');
+    setEmail('');
     localStorage.removeItem("token");
     history.push('/sign-in');
   }
@@ -165,7 +165,7 @@ function App() {
   // Effects
   useEffect(() => {
     Api.getUserInfo().then((response) => {
-      SetCurrentUser((state) => Object.assign(state, response));
+      setCurrentUser((state) => Object.assign(state, response));
     }).catch((error) => {
       console.log(error);
     });
@@ -173,7 +173,7 @@ function App() {
 
   useEffect(() => {
     Api.getInitialCards().then((response) => {
-      SetCards(response);
+      setCards(response);
     }).catch((error) => {
       console.log(error);
     });
@@ -184,7 +184,8 @@ function App() {
     if (token) {
       validateToken();
     }
-  }, [validateToken]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
 

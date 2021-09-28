@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Register = ({onSubmit}) => {
-  const [email, SetEmail] = useState('');
-  const [password, SetPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -11,21 +11,18 @@ const Register = ({onSubmit}) => {
 
     switch (name) {
       case 'name':
-        SetEmail(value);
+        setEmail(value);
         break;
       case 'password':
-        SetPassword(value);
+        setPassword(value);
         break;
       default:
         break;
     }
-
-    
-
   }
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('handler REg')
     onSubmit(email, password);
   }
   return (
